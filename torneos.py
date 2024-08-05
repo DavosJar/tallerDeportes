@@ -27,22 +27,7 @@ def main():
     # Imprimir resultados de los partidos
     print(f"Partido 1 ({partido1.equipo_local.nombre} vs {partido1.equipo_visitante.nombre}): {partido1.resultado.obtener_resultado()}")
     print(f"Partido 2 ({partido2.equipo_local.nombre} vs {partido2.equipo_visitante.nombre}): {partido2.resultado.obtener_resultado()}")
-    
-    # Asignar puntos
-    def asignar_puntos(equipo, goles, goles_oponente):
-        if goles > goles_oponente:
-            equipo.puntos += 3  # Victoria
-        elif goles < goles_oponente:
-            equipo.puntos += 0  # Derrota
-        else:
-            equipo.puntos += 1  # Empate
-    
-    # Actualizar puntos
-    asignar_puntos(equipo_A, 2, 2)  # Partido 1
-    asignar_puntos(equipo_B, 2, 2)  # Partido 1
-    asignar_puntos(equipo_B, 1, 0)  # Partido 2
-    asignar_puntos(equipo_A, 0, 1)  # Partido 2
-    
+
     # Mostrar tabla de posiciones
     estadisticas = EstadisticaCampeonato([equipo_A, equipo_B])
     tabla_posiciones = estadisticas.obtener_tabla_posiciones()
